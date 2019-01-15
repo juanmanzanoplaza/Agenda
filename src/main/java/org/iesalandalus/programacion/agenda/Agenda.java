@@ -52,5 +52,22 @@ public class Agenda {
 			return false;
 		return true;
 	}
+	
+	public Contacto buscar(String nombre) {
+		int indice = buscarIndiceCliente(nombre);
+		if(indice == MAX_CONTACTOS)
+			return null;
+		return contactos[indice];
+	}
+	
+	private int buscarIndiceCliente(String nombre) {
+		for(int i = 0; i < contactos.length; i++) {
+			if(contactos[i]!=null) {
+				if(contactos[i].getNombre().equals(nombre))
+					return i;
+			}
+		}
+		return MAX_CONTACTOS;
+	}
 
 }
