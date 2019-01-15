@@ -5,11 +5,11 @@ import java.util.regex.Pattern;
 
 public class Contacto {
 	private static final String ER_TELEFONO = "^[69][0-9]{8}$";
-	private static final String ER_CORREO = "^[_-a-z0-9]+(\\.[_-a-z0-9]+)*@[-a-z0-9]+(\\.[-a-z0-9]+)*(\\.[a-z]{2,4})$";
+	private static final String ER_CORREO = "^[a-z0-9]+(\\.[a-z0-9]+)*@[a-z]+(\\.[a-z]+)*(\\.[a-z]{2,4})$";
 	private String nombre;
 	private String telefono;
 	private String correo;
-	
+
 	public Contacto(String nombre, String telefono, String correo) {
 		setNombre(nombre);
 		setTelefono(telefono);
@@ -22,8 +22,8 @@ public class Contacto {
 
 	private void setNombre(String nombre) throws IllegalArgumentException{
 		if(nombre == null || nombre=="")
-			throw new IllegalArgumentException("HAY QUE MIRAR QUE MENSAJE DEBE DAR");
-		this.nombre = nombre;
+			throw new IllegalArgumentException("El nombre de un contacto no puede ser nulo o vacío.");
+		this.nombre = nombre.trim();
 	}
 
 	public String getTelefono() {
@@ -31,12 +31,14 @@ public class Contacto {
 	}
 
 	public void setTelefono(String telefono) throws IllegalArgumentException{
+		if(telefono==null || telefono=="")
+			throw new IllegalArgumentException("El teléfono de un contacto no puede ser nulo o vacío.");
 		Pattern p = Pattern.compile(ER_TELEFONO);
 		Matcher m = p.matcher(telefono);
 		if(m.matches())
 			this.telefono = telefono;
 		else
-			throw new IllegalArgumentException("HAY QUE MIRAR QUE MENSAJE DEBE DAR");
+			throw new IllegalArgumentException("El teléfono no tiene un formato válido.");
 	}
 
 	public String getCorreo() {
@@ -44,12 +46,43 @@ public class Contacto {
 	}
 
 	public void setCorreo(String correo) throws IllegalArgumentException{
+		if(correo==null || correo=="")
+			throw new IllegalArgumentException("El correo de un contacto no puede ser nulo o vacío.");
 		Pattern p = Pattern.compile(ER_CORREO);
 		Matcher m = p.matcher(correo);
 		if(m.matches())
 			this.correo = correo;
 		else
-			throw new IllegalArgumentException("HAY QUE MIRAR QUE MENSAJE DEBE DAR");
+			throw new IllegalArgumentException("El correo no tiene un formato válido.");
+	}
+
+	public String toString() {
+		return getIniciales() + " [" + getTelefono() + ", " + getCorreo() + "]";
+	}
+
+	private String getIniciales() {
+		String[] partes = nombre.split(" ");
+		String iniciales = "";
+		for (int i = 0; i < partes.length; i++) {
+			if(!partes[i].equals(""))
+				iniciales += partes[i].toUpperCase().charAt(0);
+		}
+		return iniciales;
+	}
+
+	/*
+	public int hashCode() {
+
+	}
+	*/
+
+	public boolean equals(Object o) {
+		if(!(o instanceof Contacto))
+			return false;
+		Contacto otro = (Contacto) o;
+		if(getNombre().toLowerCase().equals(otro.getNombre().toLowerCase()))
+			return true;
+		return false;
 	}
 
 }
