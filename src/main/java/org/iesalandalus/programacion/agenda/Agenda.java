@@ -69,5 +69,19 @@ public class Agenda {
 		}
 		return MAX_CONTACTOS;
 	}
+	
+	public void borrar(String nombre) throws OperationNotSupportedException {
+		int indice = buscarIndiceCliente(nombre);
+		if(indice == MAX_CONTACTOS)
+			throw new OperationNotSupportedException("El contacto a borrar no existe.");
+		contactos[indice] = null;
+		desplazarUnaPosicionHaciaIzquierda(indice);
+		numContactos--;
+	}
+	
+	private void desplazarUnaPosicionHaciaIzquierda(int indice) {
+		for(int i = indice; i<contactos.length && contactos[i+1]!=null; i++)
+			contactos[i] = contactos[i+1];
+	}
 
 }
