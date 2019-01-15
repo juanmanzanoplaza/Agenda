@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class Contacto {
 	private static final String ER_TELEFONO = "^[69][0-9]{8}$";
-	private static final String ER_CORREO = "^[a-z0-9]+(\\.[a-z0-9]+)*@[a-z]+(\\.[a-z]+)*(\\.[a-z]{2,4})$";
+	private static final String ER_CORREO = "^[a-z0-9]+(\\.[a-z0-9]+)*@[a-z]+(\\.[a-z]+)*(\\.[a-z]{1,4})$";
 	private String nombre;
 	private String telefono;
 	private String correo;
