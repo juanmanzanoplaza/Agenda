@@ -4,14 +4,16 @@ import static org.junit.Assert.*;
 
 import javax.naming.OperationNotSupportedException;
 
+import org.iesalandalus.programacion.agenda.Contacto;
+import org.iesalandalus.programacion.agenda.Agenda;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class AgendaTest {
 	
-/*	private static final String MENSAJE_EXCEPCION = "DeberÃ­a haber saltado la excepciÃ³n.";
-	private static final String MENSAJE_NO_EXCEPCION = "No deberÃ­a haber saltado la excepciÃ³n.";
+	private static final String MENSAJE_EXCEPCION = "Debería haber saltado la excepción.";
+	private static final String MENSAJE_NO_EXCEPCION = "No debería haber saltado la excepción.";
 
 
 	public static Contacto contacto1, contacto2, contacto3;
@@ -147,5 +149,4 @@ public class AgendaTest {
 		assertNull(agenda.buscar(contacto3.getNombre()));
 		assertEquals(2, agenda.getNumContactos());
 	}
-*/
 }
