@@ -12,8 +12,8 @@ import org.junit.Test;
 
 public class AgendaTest {
 	
-	private static final String MENSAJE_EXCEPCION = "Debería haber saltado la excepción.";
-	private static final String MENSAJE_NO_EXCEPCION = "No debería haber saltado la excepción.";
+	private static final String MENSAJE_EXCEPCION = "DeberÃ­a haber saltado la excepciÃ³n.";
+	private static final String MENSAJE_NO_EXCEPCION = "No deberÃ­a haber saltado la excepciÃ³n.";
 
 
 	public static Contacto contacto1, contacto2, contacto3;

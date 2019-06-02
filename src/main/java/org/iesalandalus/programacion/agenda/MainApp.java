@@ -5,8 +5,8 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class MainApp {
 	
-	private static final String ERROR = "La opción seleccionada no se pudo realizar.";
-	private static final String EXITO = "La opción seleccionada se realizó con éxito.";
+	private static final String ERROR = "La opciÃ³n seleccionada no se pudo realizar.";
+	private static final String EXITO = "La opciÃ³n seleccionada se realizÃ³ con Ã©xito.";
 	private static Agenda agenda = new Agenda();
 
 	public static void main(String[] args) {
@@ -16,14 +16,14 @@ public class MainApp {
 			opcion = elegirOpcion();
 			ejecutarOpcion(opcion);
 		} while(opcion!=5);
-		System.out.println("Fin de la ejecución.");
+		System.out.println("Fin de la ejecuciÃ³n.");
 	}
 	
 	private static void mostrarMenu() {
 		System.out.println("*************************************************************");
 		System.out.println("*       PROGRAMA QUE GESTIONA UNA AGENDA DE CONTACTOS       *");
 		System.out.println("*************************************************************");
-		System.out.println("* 1 - Añadir un contacto.                                   *");
+		System.out.println("* 1 - AÃ±adir un contacto.                                   *");
 		System.out.println("* 2 - Buscar un contacto.                                   *");
 		System.out.println("* 3 - Borrar un contacto.                                   *");
 		System.out.println("* 4 - Listar contactos.                                     *");
@@ -34,7 +34,7 @@ public class MainApp {
 	private static int elegirOpcion() {
 		int lectura;
 		do {
-			System.out.println("¿Cuál de las opciones desea ejecutar? (1-5)");
+			System.out.println("Â¿CuÃ¡l de las opciones desea ejecutar? (1-5)");
 			lectura = Entrada.entero();
 		} while(lectura<1 || lectura>5);
 		return lectura;
@@ -59,7 +59,7 @@ public class MainApp {
 	private static void anadirContacto() {
 		System.out.print("Introduzca el nombre del contacto:");
 		String nombre = Entrada.cadena();
-		System.out.print("Introduzca el teléfono del contacto:");
+		System.out.print("Introduzca el telÃ©fono del contacto:");
 		String telefono = Entrada.cadena();
 		System.out.print("Introduzca el correo del contacto:");
 		String correo = Entrada.cadena();
@@ -100,7 +100,7 @@ public class MainApp {
 	private static void listarAgenda() {
 		if(agenda.getNumContactos()==0) {
 			System.out.println(ERROR);
-			System.out.println("La agenda está vacía.");
+			System.out.println("La agenda estÃ¡ vacÃ­a.");
 		} else {
 			System.out.println("Contactos existentes en la agenda:\n");
 			Contacto[] contactos = agenda.getContactos();

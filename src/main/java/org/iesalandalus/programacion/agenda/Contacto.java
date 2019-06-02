@@ -22,7 +22,7 @@ public class Contacto {
 
 	private void setNombre(String nombre) throws IllegalArgumentException{
 		if(nombre == null || nombre.equals(""))
-			throw new IllegalArgumentException("El nombre de un contacto no puede ser nulo o vacÌo.");
+			throw new IllegalArgumentException("El nombre de un contacto no puede ser nulo o vac√≠o.");
 		this.nombre = nombre.trim();
 	}
 
@@ -32,13 +32,13 @@ public class Contacto {
 
 	public void setTelefono(String telefono) throws IllegalArgumentException{
 		if(telefono==null || telefono.equals(""))
-			throw new IllegalArgumentException("El telÈfono de un contacto no puede ser nulo o vacÌo.");
+			throw new IllegalArgumentException("El tel√©fono de un contacto no puede ser nulo o vac√≠o.");
 		Pattern p = Pattern.compile(ER_TELEFONO);
 		Matcher m = p.matcher(telefono);
 		if(m.matches())
 			this.telefono = telefono;
 		else
-			throw new IllegalArgumentException("El telÈfono no tiene un formato v·lido.");
+			throw new IllegalArgumentException("El tel√©fono no tiene un formato v√°lido.");
 	}
 
 	public String getCorreo() {
@@ -47,13 +47,13 @@ public class Contacto {
 
 	public void setCorreo(String correo) throws IllegalArgumentException{
 		if(correo==null || correo.equals(""))
-			throw new IllegalArgumentException("El correo de un contacto no puede ser nulo o vacÌo.");
+			throw new IllegalArgumentException("El correo de un contacto no puede ser nulo o vac√≠o.");
 		Pattern p = Pattern.compile(ER_CORREO);
 		Matcher m = p.matcher(correo);
 		if(m.matches())
 			this.correo = correo;
 		else
-			throw new IllegalArgumentException("El correo no tiene un formato v·lido.");
+			throw new IllegalArgumentException("El correo no tiene un formato v√°lido.");
 	}
 
 	public String toString() {

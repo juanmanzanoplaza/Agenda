@@ -26,7 +26,7 @@ public class Agenda {
 
 	public void anadir(Contacto anadir) throws OperationNotSupportedException {
 		if(numContactos == MAX_CONTACTOS)
-			throw new OperationNotSupportedException("La agenda est· llena.");
+			throw new OperationNotSupportedException("La agenda est√° llena.");
 		int indice = buscarPrimerIndiceComprobandoExistencia(anadir);
 		if(indiceNoSuperaTamano(indice)) {
 			contactos[indice] = anadir;
